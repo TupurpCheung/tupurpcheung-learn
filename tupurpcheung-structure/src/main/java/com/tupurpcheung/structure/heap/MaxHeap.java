@@ -1,7 +1,7 @@
 package com.tupurpcheung.structure.heap;
 
 
-import com.tupurp.learn.structure.array.Array;
+import com.tupurpcheung.structure.array.Array;
 
 /**
  * @author @tupurp

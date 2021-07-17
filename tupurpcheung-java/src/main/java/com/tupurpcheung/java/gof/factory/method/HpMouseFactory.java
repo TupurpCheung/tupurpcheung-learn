@@ -1,7 +1,8 @@
 package com.tupurpcheung.java.gof.factory.method;
 
-import com.tupurp.learn.gof.factory.model.HpMouse;
-import com.tupurp.learn.gof.factory.model.Mouse;
+
+import com.tupurpcheung.java.gof.factory.model.HpMouse;
+import com.tupurpcheung.java.gof.factory.model.Mouse;
 
 public class HpMouseFactory implements MouseFactory {
     @Override

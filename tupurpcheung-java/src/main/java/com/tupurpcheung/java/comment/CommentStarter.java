@@ -1,7 +1,8 @@
 package com.tupurpcheung.java.comment;
 
 import com.sun.javadoc.RootDoc;
-import com.tupurp.javadoc.comment.util.DocHandler;
+import com.tupurpcheung.java.comment.util.DocHandler;
+
 
 /**
  * @description:

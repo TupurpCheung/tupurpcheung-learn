@@ -7,7 +7,7 @@ package com.tupurpcheung.algorithm.recursion;
  */
 public class Maze {
 
-    public static void main(String[] args){
+    public static void mainTest(String[] args){
         int[][] maze = initMaze(8, 7);
         showMaze(maze);
         setWay(maze,1,1);

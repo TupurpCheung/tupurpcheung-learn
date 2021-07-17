@@ -81,7 +81,7 @@ public class Empress {
         return solution;
     }
 
-    public static void main(String [] args){
+    public static void mainTest(String [] args){
         Empress empress = new Empress();
         empress.chess(0);
         System.out.printf("共有%d种解法",empress.getSolution());

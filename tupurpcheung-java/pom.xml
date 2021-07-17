@@ -40,7 +40,20 @@
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+        <!--用于将jcl （commons-logging）日志输出，现在却被 jcl-over-slf4j 骗到slf4j中-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
         </dependency>
     </dependencies>
 
@@ -90,7 +103,7 @@
                     </archive>
                 </configuration>
             </plugin>
-            <plugin>
+  <!--          <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.1.7.RELEASE</version>
@@ -104,7 +117,7 @@
                 <configuration>
                     <includeSystemScope>true</includeSystemScope>
                 </configuration>
-            </plugin>
+            </plugin>-->
 
         </plugins>
         <finalName>javadoc-comment</finalName>

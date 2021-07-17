@@ -1,8 +1,9 @@
 package com.tupurpcheung.java.gof.factory.simple;
 
-import com.tupurp.learn.gof.factory.model.DellMouse;
-import com.tupurp.learn.gof.factory.model.HpMouse;
-import com.tupurp.learn.gof.factory.model.Mouse;
+
+import com.tupurpcheung.java.gof.factory.model.DellMouse;
+import com.tupurpcheung.java.gof.factory.model.HpMouse;
+import com.tupurpcheung.java.gof.factory.model.Mouse;
 
 /*
 *

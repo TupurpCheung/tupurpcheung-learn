@@ -1,8 +1,8 @@
 package com.tupurpcheung.java.comment;
 
 import com.sun.tools.javadoc.Main;
-import com.tupurp.javadoc.comment.CommentStarter;
-import com.tupurp.javadoc.comment.constants.Constant;
+import com.tupurpcheung.java.comment.constants.Constant;
+
 
 /**
  * @description:
@@ -14,7 +14,7 @@ public class App {
         //-DjavaFileName
         //System.getProperty("");
         //处理包下面的文件 -subpackage -sourcepath
-        Main.execute(new String[]{"-doclet", com.tupurp.javadoc.comment.CommentStarter.class.getName(),
+        Main.execute(new String[]{"-doclet", CommentStarter.class.getName(),
                 "-encoding", "utf-8",
                 args[0]});
         Constant.context.stream().forEach(classComment -> {

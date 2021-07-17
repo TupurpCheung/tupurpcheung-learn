@@ -1,7 +1,8 @@
 package com.tupurpcheung.java.gof.factory.method;
 
-import com.tupurp.learn.gof.factory.model.DellMouse;
-import com.tupurp.learn.gof.factory.model.Mouse;
+
+import com.tupurpcheung.java.gof.factory.model.DellMouse;
+import com.tupurpcheung.java.gof.factory.model.Mouse;
 
 public class DellMouseFactory implements MouseFactory {
     @Override

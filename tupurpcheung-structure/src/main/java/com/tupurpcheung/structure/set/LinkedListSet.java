@@ -1,7 +1,7 @@
 package com.tupurpcheung.structure.set;
 
 
-import com.tupurp.learn.structure.linkedList.LinkedList;
+import com.tupurpcheung.structure.linkedList.LinkedList;
 
 /**
  * @author @tupurp

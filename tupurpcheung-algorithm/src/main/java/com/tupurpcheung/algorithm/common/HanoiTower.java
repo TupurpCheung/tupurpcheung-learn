@@ -7,7 +7,7 @@ package com.tupurpcheung.algorithm.common;
  */
 public class HanoiTower {
 
-    public static void main(String[] args){
+    public static void mainTest(String[] args){
         hanoiTower(3,'A','B','C');
     }
 

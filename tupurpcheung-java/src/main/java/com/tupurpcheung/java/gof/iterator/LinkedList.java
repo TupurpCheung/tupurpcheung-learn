@@ -9,11 +9,11 @@ public class LinkedList<E> implements Collection<E> {
 
     @Override
     public void add(E e) {
-        if(null == root){
-            root = new Node<>(e,null);
+        if (null == root) {
+            root = new Node<>(e, null);
             tail = root;
-        }else{
-            Node node = new Node(e,null);
+        } else {
+            Node node = new Node(e, null);
             tail.next = node;
             tail = node;
         }
@@ -30,7 +30,7 @@ public class LinkedList<E> implements Collection<E> {
         return new LinkedListIterator<>(root);
     }
 
-    private class LinkedListIterator<E> implements Iterator<E>{
+    private class LinkedListIterator<E> implements Iterator<E> {
         private Node<E> cur;
 
         public LinkedListIterator(Node<E> cur) {

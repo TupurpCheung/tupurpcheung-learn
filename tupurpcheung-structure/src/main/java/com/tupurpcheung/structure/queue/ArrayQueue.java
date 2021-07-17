@@ -1,7 +1,7 @@
 package com.tupurpcheung.structure.queue;
 
 
-import com.tupurp.learn.structure.array.Array;
+import com.tupurpcheung.structure.array.Array;
 
 /**
  * All rights Reserved, Designed By www.yingfeng365.com

@@ -1,7 +1,7 @@
 package com.tupurpcheung.structure.queue;
 
 
-import com.tupurp.learn.structure.heap.MaxHeap;
+import com.tupurpcheung.structure.heap.MaxHeap;
 
 /**
  * @author @tupurp

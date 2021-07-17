@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class Knapsack {
 
-    public static void main(String[] args){
+    public static void mainTest(String[] args){
         //背包容量 4
          int volume = 4;
         //物品重量

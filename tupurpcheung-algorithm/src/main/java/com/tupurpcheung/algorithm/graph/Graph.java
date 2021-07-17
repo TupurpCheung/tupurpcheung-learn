@@ -244,7 +244,7 @@ public class Graph {
         return stringBuilder.toString();
     }
 
-    public static void main(String[] args){
+    public static void mainTest(String[] args){
         int n = 8;
         //顶点数组
         String vertexValue[] = {"1","2","3","4","5","6","7","8"};

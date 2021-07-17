@@ -1,7 +1,7 @@
 package com.tupurpcheung.structure.set;
 
 
-import com.tupurp.learn.structure.tree.BinarySearchTree;
+import com.tupurpcheung.structure.tree.BinarySearchTree;
 
 /**
  * @author @tupurp

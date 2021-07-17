@@ -2,7 +2,9 @@ package com.tupurpcheung.java.gof.proxy.compiler;
 
 
 
-import com.tupurp.api.learn.service.aop.Animal;
+
+
+import com.tupurpcheung.java.gof.proxy.Animal;
 
 import java.lang.reflect.Method;
 

@@ -6,5 +6,6 @@ workspace2.iml
 *.iml
 *.lst
 /.idea/ 
+/log/
 */target/
 */target/*

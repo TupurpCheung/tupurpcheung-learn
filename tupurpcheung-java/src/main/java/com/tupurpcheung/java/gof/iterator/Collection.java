@@ -1,6 +1,6 @@
 package com.tupurpcheung.java.gof.iterator;
 
-public interface Collection<E> extends java.lang.Iterable<E> {
+public interface Collection<E> extends Iterable<E> {
 
     void add(E e);
 

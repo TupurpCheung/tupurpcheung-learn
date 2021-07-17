@@ -7,7 +7,7 @@ package com.tupurpcheung.algorithm.common;
  */
 public class BinarySearch {
 
-    public static void main(String[] args){
+    public static void mainTest(String[] args){
         int[] arr = {1,3,8,14,25,68,87,99};
         int index = binarySearch(arr,1);
         System.out.println("index=" + index);

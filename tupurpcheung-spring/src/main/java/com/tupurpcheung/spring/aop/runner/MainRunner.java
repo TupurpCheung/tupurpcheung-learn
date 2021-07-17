@@ -1,5 +1,6 @@
 package com.tupurpcheung.spring.aop.runner;
 
+import com.tupurpcheung.spring.aop.advice.DefaultMethodAfterAdvice;
 import com.tupurpcheung.spring.aop.advice.DefaultMethodBeforeAdvice;
 import com.tupurpcheung.spring.aop.advised.AdvisedInstance;
 import org.slf4j.Logger;
@@ -26,7 +27,10 @@ public class MainRunner implements CommandLineRunner {
         if (point instanceof Advised) {
             LOGGER.info("类实现了Advised接口");
             Advised point = (Advised) this.point;
+            //前置增强
             point.addAdvice(new DefaultMethodBeforeAdvice());
+            //后置增强
+            point.addAdvice(new DefaultMethodAfterAdvice());
         }
         point.joinPoint();
     }

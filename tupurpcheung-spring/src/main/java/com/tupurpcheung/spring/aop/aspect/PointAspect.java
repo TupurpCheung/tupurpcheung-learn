@@ -39,9 +39,6 @@ public class PointAspect {
 
     }
 
-    @After("pointCut()")
-    public void doAfter(JoinPoint joinPoint)throws Throwable {
 
-    }
 
 }

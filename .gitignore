@@ -1,0 +1,10 @@
+#/xx/过滤整个文件夹
+#*.zip 过滤所有zip文件
+#/xx/xx.zip 过滤具体文件
+#!*.zip 不过滤
+workspace2.iml
+*.iml
+*.lst
+/.idea/ 
+*/target/
+*/target/*

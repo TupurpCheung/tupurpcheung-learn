@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.tupurpcheung</groupId>
+    <artifactId>tupurpcheung-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+
+        <module>tupurpcheung-doc</module>
+        <module>tupurpcheung-algorithm</module>
+        <module>tupurpcheung-spring</module>
+        <module>tupurpcheung-java</module>
+        <module>tupurpcheung-doc</module>
+        <module>tupurpcheung-structure</module>
+        <module>tupurpcheung-spring</module>
+
+
+    </modules>
+    <packaging>pom</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <junit.verison>4.12</junit.verison>
+        <javax.mail.version>1.6.2</javax.mail.version>
+        <slf4j.log4j12.version>1.7.2</slf4j.log4j12.version>
+        <spring.version>4.3.25.RELEASE</spring.version>
+        <httpClient.version>4.5.3</httpClient.version>
+        <cglib.version>2.2.2</cglib.version>
+        <aspectj.version>1.9.1</aspectj.version>
+        <mysql.version>5.1.38</mysql.version>
+        <mybatis.spring.version>1.3.0</mybatis.spring.version>
+        <mybatis.version>3.4.1</mybatis.version>
+        <commons.io.version>2.4</commons.io.version>
+        <jackson.version>2.8.8</jackson.version>
+        <fastjson.version>1.2.68</fastjson.version>
+        <zookeeper.version>3.4.9</zookeeper.version>
+        <quartz.version>2.2.1</quartz.version>
+        <!--
+
+        dubbo-2.6.2 版本之前，只能使用如下配置
+        <beans xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+            xsi:schemaLocation="
+                http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+        dubbo-2.6.2版本及之后，能使用两种写法
+        <beans xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+            xsi:schemaLocation="
+                http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+        <beans xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+            xsi:schemaLocation="
+        -->
+        <dubbo.version>2.6.2</dubbo.version>
+        <zkclient.version>0.10</zkclient.version>
+    </properties>
+
+
+    <dependencyManagement>
+
+        <dependencies>
+            <!--引入hamcrest-core依赖  用于断言-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.verison}</version>
+                <scope>test</scope>
+            </dependency>
+            <!--会引入slf4j-api-1.6.1.jar、log4j-1.2.17.jar 依赖
+               也可以分别引入这三个依赖，且log4j 和 slf4j-log4j12的scope写runtime即可
+            -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j.log4j12.version}</version>
+            </dependency>
+            <!--用于将jcl （commons-logging）日志输出，现在却被 jcl-over-slf4j 骗到slf4j中-->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>1.7.2</version>
+                <scope>runtime</scope>
+            </dependency>
+            <!--会引入spring-core,spring-beans,spring-aop,spring-expression,commons-logging依赖
+            其中spring-aop使用时 切面 需要依赖aspectj
+            -->
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+                <!--排除commons-logging依赖-->
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+            <!--文件读写-->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!--
+             会引入javax.activation 1.1依赖 用于jaf(MIME)
+             https://mvnrepository.com/artifact/com.sun.mail/javax.mail
+             -->
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>javax.mail</artifactId>
+                <version>${javax.mail.version}</version>
+            </dependency>
+
+            <!--cglib动态代理-->
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
+            </dependency>
+
+            <!--HTTP-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpClient.version}</version>
+            </dependency>
+
+            <!--
+            依赖spring-web
+            -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <!--测试-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <!--数据库操作-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!--mybatis-spring适配器 -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis.spring.version}</version>
+            </dependency>
+            <!-- mybatis ORM框架 -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
+            <!-- dubbo -->
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>${quartz.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/dnsjava/dnsjava -->
+            <dependency>
+                <groupId>dnsjava</groupId>
+                <artifactId>dnsjava</artifactId>
+                <version>2.1.8</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>3.6</version>
+            </dependency>
+
+
+        </dependencies>
+
+    </dependencyManagement>
+
+
+
+
+
+    <build>
+        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+            <plugins>
+                <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.0.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.0.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.5.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
+                </plugin>
+                <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.7.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
+</project>

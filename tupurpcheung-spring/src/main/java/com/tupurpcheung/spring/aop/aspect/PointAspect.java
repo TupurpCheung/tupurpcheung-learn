@@ -1,6 +1,7 @@
 package com.tupurpcheung.spring.aop.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -22,7 +23,7 @@ public class PointAspect {
     /**
      * 定义切入点，切入点为com.example.aop下的所有函数
      */
-    @Pointcut("execution(public * com.tupurpcheung.spring.aop..*.*(..))")
+    @Pointcut("execution(public * com.tupurpcheung.spring.aop.advised..*.*(..))")
     public void pointCut(){}
 
     /**
@@ -38,5 +39,9 @@ public class PointAspect {
 
     }
 
+    @After("pointCut()")
+    public void doAfter(JoinPoint joinPoint)throws Throwable {
+
+    }
 
 }

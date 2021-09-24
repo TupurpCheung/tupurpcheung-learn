@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.tupurpcheung</groupId>
-    <artifactId>tupurpcheung-parent</artifactId>
+    <groupId>org.tupurpcheung.learn</groupId>
+    <artifactId>learn-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -16,11 +16,11 @@
     </parent>
 
     <modules>
-        <module>tupurpcheung-doc</module>
-        <module>tupurpcheung-algorithm</module>
-        <module>tupurpcheung-spring</module>
-        <module>tupurpcheung-java</module>
-        <module>tupurpcheung-structure</module>
+        <module>learn-doc</module>
+        <module>learn-algorithm</module>
+        <module>learn-spring</module>
+        <module>learn-jdk</module>
+        <module>learn-structure</module>
     </modules>
 
     <properties>
